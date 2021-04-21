@@ -16,6 +16,9 @@ def canUnlockAll(boxes):
     numboxes = len(boxes)
     emptyboxes = 0
 
+    if not boxes[0] and numboxes < 2:
+        return True
+
     while added:
         added = False
         remaining = keys[index:]
