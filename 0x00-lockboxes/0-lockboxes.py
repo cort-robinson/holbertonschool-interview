@@ -11,7 +11,7 @@ def canUnlockAll(boxes):
     if not boxes:
         return False
     index = 0
-    keys = list(set(boxes[0]) | {0})
+    keys = {0}
     added = True
     numboxes = len(boxes)
 
