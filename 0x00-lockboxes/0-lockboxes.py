@@ -8,6 +8,8 @@ Write a method that determines if all the boxes can be opened.
 
 def canUnlockAll(boxes):
     """Determines if all boxes can be opened"""
+    if not boxes:
+        return False
     index = 0
     keys = list(set(boxes[0]))
     added = True
