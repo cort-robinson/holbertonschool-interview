@@ -37,5 +37,4 @@ def canUnlockAll(boxes):
                 index += 1
                 added = True
 
-    print(keys)
     return len(keys) == numboxes
