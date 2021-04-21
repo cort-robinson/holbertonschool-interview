@@ -12,6 +12,7 @@ def canUnlockAll(boxes):
     keys = list(set(boxes[0]))
     added = True
     numboxes = len(boxes)
+    emptyboxes = 0
 
     while added:
         added = False
@@ -19,12 +20,12 @@ def canUnlockAll(boxes):
         result = []
         for key in remaining:
             if not boxes[key]:
-                numboxes -= 1
+                emptyboxes += 1
             result += boxes[key]
         for key in result:
-            if key not in keys:
+            if key not in keys and key < numboxes:
                 keys.append(key)
                 index += 1
                 added = True
 
-    return len(keys) == numboxes
+    return len(keys) == numboxes - emptyboxes
