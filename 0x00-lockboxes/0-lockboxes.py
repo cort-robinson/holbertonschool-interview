@@ -11,16 +11,9 @@ def canUnlockAll(boxes):
     if not boxes:
         return False
     index = 0
-    keys = list(set(boxes[0]))
+    keys = list(set(boxes[0]) | {0})
     added = True
     numboxes = len(boxes)
-    emptyboxes = 0
-
-    if 0 not in keys:
-        keys.append(0)
-
-    if not boxes[0] and numboxes < 2:
-        return True
 
     while added:
         added = False
