@@ -19,9 +19,12 @@ def canUnlockAll(boxes):
         remaining = keys[index:]
         result = []
         for key in remaining:
-            if not boxes[key]:
-                emptyboxes += 1
-            result += boxes[key]
+            try:
+                if not boxes[key]:
+                    emptyboxes += 1
+                result += boxes[key]
+            except Exception:
+                pass
         for key in result:
             if key not in keys and key < numboxes:
                 keys.append(key)
