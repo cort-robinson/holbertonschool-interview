@@ -16,6 +16,9 @@ def canUnlockAll(boxes):
     numboxes = len(boxes)
     emptyboxes = 0
 
+    if 0 not in keys:
+        keys.append(0)
+
     if not boxes[0] and numboxes < 2:
         return True
 
@@ -25,8 +28,6 @@ def canUnlockAll(boxes):
         result = []
         for key in remaining:
             try:
-                if not boxes[key]:
-                    emptyboxes += 1
                 result += boxes[key]
             except Exception:
                 pass
@@ -36,4 +37,5 @@ def canUnlockAll(boxes):
                 index += 1
                 added = True
 
-    return len(keys) == numboxes - emptyboxes
+    print(keys)
+    return len(keys) == numboxes
