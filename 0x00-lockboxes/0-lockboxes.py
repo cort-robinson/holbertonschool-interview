@@ -11,23 +11,17 @@ def canUnlockAll(boxes):
     if not boxes:
         return False
     index = 0
-    keys = list(set(boxes[0]) | {0})
-    added = True
-    numboxes = len(boxes)
+    keys = {0}
+    valid_keys = set(range(len(boxes)))
 
-    while added:
-        added = False
-        remaining = keys[index:]
+    while index < len(keys):
+        index = len(keys)
         result = []
-        for key in remaining:
-            try:
-                result += boxes[key]
-            except Exception:
-                pass
-        for key in result:
-            if key not in keys and key < numboxes:
-                keys.append(key)
-                index += 1
-                added = True
-
-    return len(keys) == numboxes
+        for key in keys:
+            if boxes[key]:
+                result.extend(boxes[key])
+        keys = keys | set(result)
+        keys = keys & valid_keys
+        if len(keys) == len(boxes):
+            return True
+    return False
