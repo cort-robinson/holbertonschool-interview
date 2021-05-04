@@ -20,10 +20,17 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 	if (!parent)
 		return (new);
 
-	if (!parent->left)
+	if (value < parent->n || (!parent->left && !parent->right))
 		parent->left = new;
-	else
+	else if (value > parent->n)
 		parent->right = new;
+	else
+	{
+		if (!parent->left)
+			parent->left = new;
+		else
+			parent->right = new;
+	}
 
 	return (new);
 }
