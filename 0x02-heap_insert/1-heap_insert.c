@@ -8,13 +8,13 @@
  */
 heap_t *heap_insert(heap_t **root, int value)
 {
-    heap_t *new, *parent;
+	heap_t *new, *parent;
 
 	new = malloc(sizeof(heap_t));
 	if (new == NULL)
 		return (NULL);
 
-    parent = *root;
+	parent = *root;
 
 	new->n = value;
 	new->parent = parent;
