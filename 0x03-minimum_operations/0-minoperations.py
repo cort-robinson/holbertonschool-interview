@@ -4,11 +4,12 @@
 
 def minOperations(n):
     """Determine min operations"""
-    result = 0
+    ans = 0
+    d = 2
 
-    for i in range(2, n+1):
-        while n % i == 0:
-            result += i
-            n = n/i
-
-    return result
+    while n > 1:
+        while n % d == 0:
+            ans += d
+            n /= d
+        d += 1
+    return ans
