@@ -15,15 +15,18 @@ int is_palindrome(listint_t **head)
 	if (*head == NULL)
 		return (1);
 
+	// fast traverses at twice the speed of slow, so slow will stop at midpoint of list.
 	while (fast->next != NULL && fast->next->next != NULL)
 	{
 		fast = fast->next->next;
 		slow = slow->next;
 	}
 
+	// reverse second half of list for comparison with first half
 	second_half = reverse(slow->next);
 	first_half = *head;
 
+	// compare first half of list with second half
 	while (second_half != NULL && first_half != NULL)
 	{
 		if (first_half->n != second_half->n)
@@ -42,14 +45,19 @@ int is_palindrome(listint_t **head)
 
 listint_t *reverse(listint_t *head)
 {
+	// new head when list is reversed
 	listint_t *new = NULL;
 	listint_t *next;
 
 	while (head != NULL)
 	{
+		// store next node
 		next = head->next;
+		// set previous node as next node
 		head->next = new;
+		// set current head as previous node for next iteration
 		new = head;
+		// move head to next node to start next iteration
 		head = next;
 	}
 	return (new);
