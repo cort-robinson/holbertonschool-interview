@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+
+"""Module defines validUTF8"""
+
 def validUTF8(data):
     """Determines if a given data set represents valid UTF-8 encoding"""
     n_bytes = 0
