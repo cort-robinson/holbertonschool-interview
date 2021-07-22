@@ -68,10 +68,10 @@ def main():
         N = int(sys.argv[1])
     except Exception:
         print('N must be a number')
-        exit()
+        exit(1)
     if N < 4:
         print('N must be at least 4')
-        exit()
+        exit(1)
     for i in range(N):
         row = ["."] * N
         board.append(row)
