@@ -60,6 +60,9 @@ def PlaceNQueens(board, col, boardcnt=0):
 def main():
     """Main"""
     board = []
+    if (len(sys.argv) != 2):
+        print("Usage: nqueens N")
+        sys.exit(1)
     try:
         N = int(sys.argv[1])
     except Exception:
