@@ -20,9 +20,6 @@ You are only allowed to import the sys module
 import sys
 
 
-boardcnt = 0
-
-
 def IsBoardOk(board, row, col):
     """Check if current queen placements is okay"""
     for c in range(col):
@@ -47,9 +44,8 @@ def DisplayBoard(board):
     print(positions)
 
 
-def PlaceNQueens(board, col):
+def PlaceNQueens(board, col, boardcnt=0):
     """place N queens on the board"""
-    global boardcnt
     if (col >= len(board)):
         boardcnt += 1
         DisplayBoard(board)
@@ -78,5 +74,5 @@ def main():
     PlaceNQueens(board, 0)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
