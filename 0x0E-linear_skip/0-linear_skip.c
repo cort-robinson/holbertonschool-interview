@@ -13,16 +13,18 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 {
 	skiplist_t *node = list;
 	skiplist_t *express = list;
-	while (node != NULL) {
-		if (node->n == value) {
-			return node;
-		}
-		if (node->n < value) {
+
+	while (node != NULL)
+	{
+		if (node->n == value)
+			return (node);
+		if (node->n < value)
 			node = node->next;
-		} else {
+		else
+		{
 			express = express->express;
 			node = express;
 		}
 	}
-	return NULL;
+	return (NULL);
 }
