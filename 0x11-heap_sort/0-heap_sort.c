@@ -36,12 +36,12 @@ void sift_down(int *array, int node_value, int root, int end)
  */
 void heap_sort(int *array, size_t size)
 {
-	int last_node_value;
+	int i, last_node, last_node_value;
 
-	for (int i = size / 2; i >= 0; i--)
+	for (i = size / 2; i >= 0; i--)
 		sift_down(array, array[i], i, size);
 
-	for (int last_node = size - 1; last_node > 0; last_node--)
+	for (last_node = size - 1; last_node > 0; last_node--)
 	{
 		last_node_value = array[last_node];
 		array[last_node] = array[0];
