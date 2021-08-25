@@ -7,8 +7,9 @@
  * @node_value: value of the node to sift down
  * @root: start point
  * @end: end point
+ * @size: size of the array
  */
-void sift_down(int *array, int node_value, int root, int end)
+void sift_down(int *array, int node_value, int root, int end, size_t size)
 {
 	int left_child = 2 * root + 1;
 
@@ -25,6 +26,7 @@ void sift_down(int *array, int node_value, int root, int end)
 		root = left_child;
 		left_child = 2 * root + 1;
 		array[root] = node_value;
+		print_array(array, size);
 	}
 }
 
@@ -42,7 +44,7 @@ void heap_sort(int *array, size_t size)
 		return;
 
 	for (i = size / 2; i >= 0; i--)
-		sift_down(array, array[i], i, size);
+		sift_down(array, array[i], i, size, size);
 
 	for (last_node = size - 1; last_node > 0; last_node--)
 	{
@@ -50,6 +52,6 @@ void heap_sort(int *array, size_t size)
 		array[last_node] = array[0];
 		array[0] = last_node_value;
 		print_array(array, size);
-		sift_down(array, last_node_value, 0, last_node - 1);
+		sift_down(array, last_node_value, 0, last_node - 1, size);
 	}
 }
