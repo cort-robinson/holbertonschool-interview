@@ -15,6 +15,9 @@ int search(int *array, size_t size, int value, int start, int end)
 {
 	int i, mid;
 
+	if (array == NULL || size == 0)
+		return (-1);
+
 	printf("Searching in array: ");
 	for (i = start; i <= end; i++)
 	{
