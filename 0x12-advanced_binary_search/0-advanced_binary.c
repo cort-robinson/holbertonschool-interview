@@ -15,7 +15,7 @@ int search(int *array, size_t size, int value, int start, int end)
 {
 	int i, mid;
 
-	if (array == NULL || size == 0)
+	if (array == NULL || size == 0 || start > end)
 		return (-1);
 
 	printf("Searching in array: ");
@@ -26,8 +26,6 @@ int search(int *array, size_t size, int value, int start, int end)
 		else
 			printf("%d, ", array[i]);
 	}
-	if (start > end)
-		return (-1);
 	mid = (start + end) / 2;
 	if (array[mid] == value)
 		return (mid);
