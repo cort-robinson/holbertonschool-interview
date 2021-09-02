@@ -27,12 +27,19 @@ int search(int *array, size_t size, int value, int start, int end)
 			printf("%d, ", array[i]);
 	}
 	mid = (start + end) / 2;
+	if (end - start < 2)
+	{
+		if (array[start] == value)
+			return (start);
+		if (array[end] == value)
+			return (end);
+		return (-1);
+	}
 	if (array[mid] == value)
-		return (mid);
+		return (search(array, size, value, start, mid));
 	if (array[mid] > value)
 		return (search(array, size, value, start, mid - 1));
-	else
-		return (search(array, size, value, mid + 1, end));
+	return (search(array, size, value, mid + 1, end));
 }
 
 /**
