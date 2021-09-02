@@ -27,7 +27,7 @@ int search(int *array, size_t size, int value, int start, int end)
 			printf("%d, ", array[i]);
 	}
 	mid = (start + end) / 2;
-	if (end - start < 2)
+	if (end - start < 3)
 	{
 		if (array[start] == value)
 			return (start);
