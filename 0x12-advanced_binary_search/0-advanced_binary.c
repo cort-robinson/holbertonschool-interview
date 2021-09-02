@@ -13,25 +13,25 @@
  */
 int search(int *array, size_t size, int value, int start, int end)
 {
-    int i, mid;
+	int i, mid;
 
-    printf("Searching in array: ");
-    for (i = start; i < end; i++)
-    {
-        if (i == end - 1)
-            printf("%d\n", array[i]);
-        else
-            printf("%d, ", array[i]);
-    }
-    if (start > end)
-        return (-1);
-    mid = (start + end) / 2;
-    if (array[mid] == value)
-        return (mid);
-    if (array[mid] > value)
-        return (search(array, size, value, start, mid - 1));
-    else
-        return (search(array, size, value, mid + 1, end));
+	printf("Searching in array: ");
+	for (i = start; i < end; i++)
+	{
+		if (i == end - 1)
+			printf("%d\n", array[i]);
+		else
+			printf("%d, ", array[i]);
+	}
+	if (start > end)
+		return (-1);
+	mid = (start + end) / 2;
+	if (array[mid] == value)
+		return (mid);
+	if (array[mid] > value)
+		return (search(array, size, value, start, mid - 1));
+	else
+		return (search(array, size, value, mid + 1, end));
 }
 
 /**
@@ -44,5 +44,5 @@ int search(int *array, size_t size, int value, int start, int end)
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-    return (search(array, size, value, 0, size));
+	return (search(array, size, value, 0, size));
 }
