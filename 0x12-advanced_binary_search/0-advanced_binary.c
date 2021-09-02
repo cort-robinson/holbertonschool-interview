@@ -13,7 +13,7 @@
  */
 int search(int *array, size_t size, int value, int start, int end)
 {
-    int i;
+    int i, mid;
 
     printf("Searching in array: ");
     for (i = start; i < end; i++)
@@ -25,7 +25,7 @@ int search(int *array, size_t size, int value, int start, int end)
     }
     if (start > end)
         return (-1);
-    int mid = (start + end) / 2;
+    mid = (start + end) / 2;
     if (array[mid] == value)
         return (mid);
     if (array[mid] > value)
