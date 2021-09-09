@@ -5,6 +5,7 @@ import requests
 
 def count_words(subreddit, word_list, after=None, count={}):
     """Counts the number of times a word appears in a subreddit's hot list"""
+
     if after:
         request = requests.get(
             'https://www.reddit.com/r/{}/hot.json?after={}'.format(
