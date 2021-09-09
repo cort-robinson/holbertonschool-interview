@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Contains count_words function"""
+"""Contains count_words function to query reddit API"""
 import requests
 
 
