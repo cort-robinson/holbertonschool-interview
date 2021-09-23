@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 	result = num1 * num2;
 	itoa(result, results_s, 10);
 	_puts(results_s);
-    return (0);
+	return (0);
 }
 
 
@@ -34,7 +34,7 @@ int main(int argc, char **argv)
  */
 void error_check(int argc, char **argv)
 {
-    int i;
+	int i;
 
 	if (argc != 3)
 	{
