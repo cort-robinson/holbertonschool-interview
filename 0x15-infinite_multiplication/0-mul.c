@@ -22,6 +22,7 @@ int main(int argc, char **argv)
 	result = num1 * num2;
 	itoa(result, results_s, 10);
 	_puts(results_s);
+    return (0);
 }
 
 
@@ -33,12 +34,14 @@ int main(int argc, char **argv)
  */
 void error_check(int argc, char **argv)
 {
+    int i;
+
 	if (argc != 3)
 	{
 		_puts("Error\n");
 		exit(98);
 	}
-	for (int i = 0; argv[1][i] != '\0'; i++)
+	for (i = 0; argv[1][i] != '\0'; i++)
 	{
 		if (!isdigit(argv[1][i]))
 		{
@@ -46,7 +49,7 @@ void error_check(int argc, char **argv)
 			exit(98);
 		}
 	}
-	for (int i = 0; argv[2][i] != '\0'; i++)
+	for (i = 0; argv[2][i] != '\0'; i++)
 	{
 		if (!isdigit(argv[2][i]))
 		{
