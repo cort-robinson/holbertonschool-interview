@@ -38,14 +38,14 @@ void error_check(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		_puts("Error\n");
+		_puts("Error");
 		exit(98);
 	}
 	for (i = 0; argv[1][i] != '\0'; i++)
 	{
 		if (!isdigit(argv[1][i]))
 		{
-			_puts("Error\n");
+			_puts("Error");
 			exit(98);
 		}
 	}
@@ -53,7 +53,7 @@ void error_check(int argc, char **argv)
 	{
 		if (!isdigit(argv[2][i]))
 		{
-			_puts("Error\n");
+			_puts("Error");
 			exit(98);
 		}
 	}
