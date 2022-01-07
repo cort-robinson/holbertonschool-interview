@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" 0-pascal_triangle.py: prints a Pascal's triangle of n """
 
 
 def pascal_triangle(n):
