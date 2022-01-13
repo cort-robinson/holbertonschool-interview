@@ -58,11 +58,11 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
  * @s: substring to check
  * @words: array of words to check against
  * @nb_words: number of words in the array
- * @word_len: length of each word in the array
+ * @wordlen: length of each word in the array
  *
  * Return: true if the substring is a concatenation of words, false otherwise
  */
-bool is_substring(char const *s, char const **words, int nb_words, int word_len)
+bool is_substring(char const *s, char const **word, int nb_words, int wordlen)
 {
 	int *checked, check_len = 0, i, j, in_array;
 	bool match = true, found;
@@ -78,7 +78,7 @@ bool is_substring(char const *s, char const **words, int nb_words, int word_len)
 		for (j = 0; j < nb_words; j++)
 		{
 			in_array = check_array(checked, check_len, j);
-			if (!in_array && check_word((s + (i * word_len)), words[j]))
+			if (!in_array && check_word((s + (i * wordlen)), word[j]))
 			{
 				checked[check_len] = j;
 				check_len++;
@@ -99,8 +99,8 @@ bool is_substring(char const *s, char const **words, int nb_words, int word_len)
 /**
  * check_word - checks if word is in the substring
  *
- * @s: substring to check
- * @word: words to check against
+ * @str: substring to check
+ * @words: words to check against
  *
  * Return: true if word is in the substring, false otherwise
  */
@@ -134,5 +134,5 @@ bool check_array(int *arr, int len, int val)
 		if (arr[i] == val)
 			return (true);
 	}
-	return false;
+	return (false);
 }
