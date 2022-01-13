@@ -56,7 +56,7 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
  * is_substring - checks if a substring is a concatenation of words
  *
  * @s: substring to check
- * @words: array of words to check against
+ * @word: array of words to check against
  * @nb_words: number of words in the array
  * @wordlen: length of each word in the array
  *
