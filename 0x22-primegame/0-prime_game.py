@@ -10,6 +10,4 @@ def isWinner(x, nums):
     for i in range(len(nums)):
         number ^= nums[i % len(nums)]
 
-    print(number)
-
     return "Ben" if number > 0 else "Maria"
